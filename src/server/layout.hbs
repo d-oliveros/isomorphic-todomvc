@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+  {{!-- Head --}}
+  <head>
+    <meta charset='utf8'/>
+    {{!-- <link rel='icon' href='/favicon.ico'/> --}}
+
+    {{#with meta}}
+      <title>{{ pageTitle }}</title>
+    {{/with}}
+
+    {{!-- <link rel='stylesheet' href='/build/css/style.css'/> --}}
+
+    {{#if serializedState}}
+      <script id='serialized-state'>window.__INITIAL_STATE__ = '{{ serializedState }}';</script>
+    {{/if}}
+  </head>
+
+  {{!-- Body --}}
+  <body>
+
+    {{!-- Initialized Client's HTML --}}
+    <div id='react-container'>{{{ body }}}</div>
+
+    <div id='scripts'>
+      <script src='http://localhost:8001/webpack-dev-server.js'></script>
+      <script src='http://localhost:8001/build/bundle.js'></script>
+    </div>
+  </body>
+</html>
