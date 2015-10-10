@@ -1,6 +1,6 @@
 # Isomorphic TodoMVC
 
-Isomorphic TodoMVC example with React, Isomorphine, Webpack, Mongo.
+Isomorphic TodoMVC example with React, Isomorphine, Webpack, Mongo, ES7.
 
 ## Global Dependencies
 * Node.js
