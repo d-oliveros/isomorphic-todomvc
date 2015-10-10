@@ -1,5 +1,5 @@
 import http from 'http';
-import './database/mongo';
+import './database';
 
 const emptyFunction = function(){};
 

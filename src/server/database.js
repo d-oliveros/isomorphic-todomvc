@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { mongo } from '../../../config/database';
+import { mongo } from '../../config/database';
 
 let { host, db, replicaSet } = mongo;
 
