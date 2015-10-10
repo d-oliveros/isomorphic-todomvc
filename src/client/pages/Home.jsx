@@ -32,12 +32,14 @@ export default class HomePage extends React.Component {
   }
 
   render() {
-    let { todos } = this.props;
-
     return (
       <div>
-        <h1>{ `todos (${todos.length})` }</h1>
         <Todos/>
+        <footer className='info'>
+          <p>Double-click to edit a todo</p>
+          <p>Created by <a href="https://github.com/d-oliveros">David Oliveros</a></p>
+          <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+        </footer>
       </div>
     );
   }

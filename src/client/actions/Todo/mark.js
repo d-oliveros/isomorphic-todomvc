@@ -7,7 +7,7 @@ export default function markTodo(state, todoId) {
     let todo = todoCursor.get();
     let newMarkedState = !todo.marked;
 
-    TodoAPI.setMark(todoId, newMarkedState, (err) => {
+    TodoAPI.mark(todoId, newMarkedState, (err) => {
       if (err) return reject(err);
 
       todoCursor.set('marked', newMarkedState);

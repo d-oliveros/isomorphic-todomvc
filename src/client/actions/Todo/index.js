@@ -1,7 +1,9 @@
 
 export default {
+  startEdition: require('./startEdition'),
   create: require('./create'),
   delete: require('./delete'),
-  mark: require('./mark'),
-  load: require('./load')
+  edit: require('./edit'),
+  load: require('./load'),
+  mark: require('./mark')
 };
