@@ -55,8 +55,8 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env': serialize({
-        ISOMORPHINE_HOST: process.env.ISOMORPHINE_HOST,
-        ISOMORPHINE_PORT: process.env.ISOMORPHINE_PORT
+        ISOMORPHINE_HOST: process.env.ISOMORPHINE_HOST || 'http://localhost',
+        ISOMORPHINE_PORT: process.env.ISOMORPHINE_PORT || '3000'
       })
     })
   ]

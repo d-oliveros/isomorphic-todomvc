@@ -1,6 +1,8 @@
 import React from 'react';
 
 export default class NotFoundPage extends React.Component {
+
+  // Catch-all route
   static route = '*';
 
   static meta() {
@@ -12,7 +14,9 @@ export default class NotFoundPage extends React.Component {
 
   render() {
     return (
-      <div />
+      <div>
+        <p>Page not found.</p>
+      </div>
     );
   }
 }

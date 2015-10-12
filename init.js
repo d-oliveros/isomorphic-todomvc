@@ -1,23 +1,25 @@
 
 /**
- * Registers babel, loads the environment, defines the globals,
+ * Registers babel, loads the environment,
  * and bootstraps the server.
  */
 require('babel/register');
-
 require('./loadenv');
-require('./globals');
 
-var Server = require('./src/server/server');
 var app = require('./src/server/app');
-var port = __config.server.port;
+var config = require('./config');
 
-var server = new Server(app);
+var serverPort = config.server.port;
+var dbConfig = config.database.mongo;
 
-server.bootstrap(port, function() {
-  console.log('App listening on port: ' + port);
+// Connect to the mongo database
+app.connectDB(dbConfig);
 
-  process.on('uncaughtException', function(exception) {
-    __log.error(exception);
+// Starts listening at port `port`
+app.listen(serverPort, function() {
+  console.log('App listening on port: ' + serverPort);
+
+  process.on('uncaughtException', function(err) {
+    console.error(err.stack);
   });
 });

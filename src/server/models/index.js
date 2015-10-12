@@ -1,6 +1,7 @@
 import isomorphine from 'isomorphine';
 
 /**
- * Proxy function calls to these models
+ * Exports a model interface that can be required from the browser,
+ * using this directory as the root interface directory.
  */
 export default isomorphine.proxy();

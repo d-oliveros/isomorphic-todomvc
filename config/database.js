@@ -3,7 +3,7 @@ var config = {};
 // Stand-alone config
 if (!process.env.MONGO_REPLICA_SET) {
   config.mongo = {
-    db: process.env.MONGO_DB || 'isomorphic_mvc_local',
+    db: process.env.MONGO_DB || 'isomorphic_todomvc',
     host: process.env.MONGO_HOST || '127.0.0.1',
     pass: process.env.MONGO_PASS || null
   };
