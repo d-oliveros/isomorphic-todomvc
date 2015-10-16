@@ -9,7 +9,7 @@ Isomorphic TodoMVC example with React, Isomorphine, Webpack, Baobab, Mongo.
 By default, the app will try to connect to the mongo process running in localhost, port 6379. To use a different database connection, copy `.env.default` to `.env` and modify `.env` accordingly.
 
 ## Installation
-````
+```
 npm install
 ```
 
