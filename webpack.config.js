@@ -1,3 +1,6 @@
+/* eslint-disable no-var */
+/* eslint-disable vars-on-top */
+
 require('./loadenv');
 
 var webpack = require('webpack');
@@ -7,7 +10,7 @@ module.exports = {
   entry: {
     app: [
       'webpack/hot/dev-server',
-      './src/client/bootstrap.js'
+      './src/client.js'
     ]
   },
   output: {
@@ -21,7 +24,7 @@ module.exports = {
   module: {
     preLoaders: [
       {
-        test: /src\/server\/models\/index\.js$/,
+        test: /src\/api\/index\.js$/,
         loaders: ['isomorphine']
       }
     ],
@@ -52,31 +55,6 @@ module.exports = {
   debug: true,
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': serialize({
-        ISOMORPHINE_HOST: process.env.ISOMORPHINE_HOST || 'http://localhost',
-        ISOMORPHINE_PORT: process.env.ISOMORPHINE_PORT || '3000'
-      })
-    })
+    new webpack.NoErrorsPlugin()
   ]
 };
-
-function serialize(data) {
-  for (var key in data) {
-    switch (typeof data[key]) {
-      case 'string':
-        data[key] = '\'' + data[key] + '\'';
-        break;
-
-      case 'object':
-        data[key] = JSON.stringify(data[key]);
-        break;
-
-      default:
-        data[key] = '';
-        break;
-    }
-  }
-  return data;
-}

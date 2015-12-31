@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 
 /**
  * Loads the environment in `.env`.
@@ -12,4 +13,4 @@ if (!fs.existsSync(envPath)) {
   envPath += '.default';
 }
 
-dotenv.load({path: envPath});
+dotenv.load({ path: envPath });

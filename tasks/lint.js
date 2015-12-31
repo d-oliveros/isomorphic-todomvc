@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 var gulp = require('gulp');
 var eslint = require('gulp-eslint');
 

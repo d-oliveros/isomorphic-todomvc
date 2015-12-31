@@ -1,16 +1,18 @@
+/* eslint-disable no-var */
+/* eslint-disable vars-on-top */
 var config = {};
 
-// Stand-alone config
 if (!process.env.MONGO_REPLICA_SET) {
+
+  // Stand-alone config
   config.mongo = {
     db: process.env.MONGO_DB || 'isomorphic_todomvc',
     host: process.env.MONGO_HOST || '127.0.0.1',
     pass: process.env.MONGO_PASS || null
   };
-}
 
-// Replica set config
-else {
+} else {
+  // Replica set config
   config.mongo = {
     db: process.env.MONGO_DB,
     port: process.env.MONGO_PORT || '6379',
@@ -33,7 +35,7 @@ else {
 
   // URI is in the following format:
   // mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][/[database][?options]]
-  replicaSet.uri = hosts.map(function(host, key) {
+  replicaSet.uri = hosts.map(function (host, key) {
     var prefix = key === 0 ? 'mongodb://' : '';
     var suffix = key === (hosts.length - 1) ? '/' + db : '';
     return prefix + host + ':' + port + suffix;
