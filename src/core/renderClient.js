@@ -10,7 +10,7 @@ import Location from 'react-router/lib/Location';
 import initialState from '../constants/initialState';
 import universalRouter from './universalRouter';
 
-const debug = require('debug')('renderer');
+const debug = require('debug')('app:renderClient');
 const buildHtml = handlebars.compile(getTemplateFile());
 const initialStateKeys = Object.keys(initialState());
 
@@ -57,7 +57,7 @@ export default async function requestClient(req, res, next) {
  * @return {String}  The client's layout handlebars source
  */
 function getTemplateFile() {
-  const source = path.join(__dirname, 'layout.hbs');
+  const source = path.join(__dirname, '..', 'layout.hbs');
   return fs.readFileSync(source, { encoding: 'utf-8' });
 }
 

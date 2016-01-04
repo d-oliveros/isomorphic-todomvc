@@ -1,6 +1,9 @@
+import requireIndex from 'es6-requireindex';
 
-// Important: Order matters
-export default {
-  Home: require('./Home.jsx'),
-  NotFound: require('./NotFound.jsx')
-};
+let req;
+
+try {
+  req = require.context(__dirname, true, /^(.*\.((js|jsx)$))[^.]*$/igm);
+} catch (err) {}
+
+module.exports = requireIndex(req);

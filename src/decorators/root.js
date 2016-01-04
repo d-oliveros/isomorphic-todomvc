@@ -1,11 +1,12 @@
 import React from 'react';
 import { Branch } from 'baobab-react/wrappers';
 import PropTypes from 'baobab-react/prop-types';
+import getBrowserTree from '../core/getBrowserTree';
 
 /**
  * Decorator for a root component.
  */
-export default function rootDecorator(params) {
+export default function rootDecorator(params = {}) {
   return (BaseComponent) => {
     const ComposedComponent = plantTree(BaseComponent, params);
 
@@ -51,7 +52,7 @@ function plantTree(Component, { cursors, actions }) {
       // and from the serialized value in the client.
       this.tree = props.params && props.params.state
         ? props.params.state
-        : require('../core/getBrowserTree')();
+        : getBrowserTree();
     }
 
     render() {

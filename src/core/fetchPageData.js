@@ -1,7 +1,7 @@
 import inspect from 'util-inspect';
 import invariant from 'invariant';
 
-const debug = require('debug')('fetchData');
+const debug = require('debug')('app:fetchData');
 
 /**
  * Runs the data fetching functions defined in the router state's component tree.

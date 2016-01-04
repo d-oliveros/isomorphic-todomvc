@@ -26,5 +26,5 @@ universalRouter(location, history, getBrowserTree())
     React.render(component, container);
   })
   .catch((err) => {
-    console.log(err);
+    console.log(err.stack);
   });

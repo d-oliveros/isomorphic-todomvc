@@ -9,7 +9,7 @@ require('babel-polyfill');
 require('babel-core/register');
 require('./loadenv');
 
-var app = require('./src/server');
+var app = require('./src/server').app;
 var config = require('./config');
 
 var serverPort = config.server.port;

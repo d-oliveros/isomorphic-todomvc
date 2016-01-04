@@ -5,7 +5,7 @@ import inspect from 'util-inspect';
 import fetchPageData from './fetchPageData';
 import App from './App.jsx';
 
-const debug = require('debug')('universalRouter');
+const debug = require('debug')('app:universalRouter');
 const routes = createRoutes(App);
 
 /**
@@ -29,7 +29,11 @@ export default function universalRouter(location, history, state) {
 
       debug(`Router.run called. Running 'fetchPageData'. routerState:\n${inspect(routerState)}`);
 
-      await fetchPageData(routerState, state);
+      try {
+        await fetchPageData(routerState, state);
+      } catch (err) {
+        return reject(err);
+      }
 
       if (history) {
         routerState.history = history;
@@ -40,7 +44,7 @@ export default function universalRouter(location, history, state) {
       routerState.params.state = state;
 
       const component = <Router { ...routerState } children={ routes }/>;
-      return component;
+      resolve(component);
     });
   });
 }

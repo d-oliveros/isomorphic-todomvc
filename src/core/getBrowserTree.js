@@ -20,7 +20,7 @@ export default function getBrowserTree() {
     process.browser,
     'Only browsers are allowed to build the initial client state');
 
-  const debug = require('debug')('state');
+  const debug = require('debug')('app:state');
   let state = initialState();
 
   debug('Initial state', inspect(state));

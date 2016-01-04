@@ -1,7 +1,8 @@
 import React from 'react';
-import a, { root } from '../decorators';
-import TodoActions from '../actions/Todo';
-console.log(a.root, a.root.default, root);
+import { root } from '../decorators';
+import { Todo as TodoActions } from '../actions';
+import { Todos } from '../components';
+
 @root()
 
 export default class HomePage extends React.Component {

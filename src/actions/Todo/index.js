@@ -1,9 +1,9 @@
+import requireIndex from 'es6-requireindex';
 
-export default {
-  startEdition: require('./startEdition'),
-  create: require('./create'),
-  delete: require('./delete'),
-  edit: require('./edit'),
-  load: require('./load'),
-  mark: require('./mark')
-};
+let req;
+
+try {
+  req = require.context(__dirname, true, /^(.*\.((js|jsx)$))[^.]*$/igm);
+} catch (err) {}
+
+module.exports = requireIndex(req);

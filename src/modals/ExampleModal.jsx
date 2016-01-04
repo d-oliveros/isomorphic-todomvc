@@ -1,6 +1,8 @@
 import React from 'react';
-import { EXAMPLE_MODAL_OPEN } from '../constants/events';
+import a, { EXAMPLE_MODAL_OPEN } from '../constants/events';
 import { modal } from '../decorators';
+
+console.log(a, EXAMPLE_MODAL_OPEN);
 
 @modal(EXAMPLE_MODAL_OPEN)
 
@@ -12,7 +14,7 @@ export default class ExampleModal extends React.Component {
   }
 
   render() {
-    let { closeModal } = this.props;
+    const { closeModal } = this.props;
 
     return (
       <aside>

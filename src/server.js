@@ -8,7 +8,7 @@ import { router as IsomorphicAPI } from './api';
 const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
 const servePublicAssets = express.static(PUBLIC_DIR);
 
-const app = express();
+export const app = express();
 
 app.use(servePublicAssets); // Public assets
 app.use(bodyParser.json()); // Parse JSON bodies
@@ -41,5 +41,3 @@ function connectDB({ host, db, replicaSet }) {
 
   return mongoose.connection;
 }
-
-export default app;

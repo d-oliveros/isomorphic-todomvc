@@ -1,5 +1,9 @@
+import requireIndex from 'es6-requireindex';
 
-export default {
-  modal: require('./modal'),
-  root: require('./root')
-};
+let req;
+
+try {
+  req = require.context(__dirname, true, /^(.*\.((js|jsx)$))[^.]*$/igm);
+} catch (err) {}
+
+module.exports = requireIndex(req);
