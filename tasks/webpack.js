@@ -1,7 +1,8 @@
+/* eslint-disable no-var */
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 
-module.exports = function(callback) {
+module.exports = function startDevServer(callback) {
   var config = require('../webpack.config.js');
   var compiler = webpack(config);
 
@@ -12,7 +13,7 @@ module.exports = function(callback) {
 
   var devServer = new WebpackDevServer(compiler, webpackDevServerConf);
 
-  devServer.listen(config.devServer.port, config.devServer.host, function(err) {
+  devServer.listen(config.devServer.port, config.devServer.host, function (err) {
     if (err) callback(err);
   });
 };

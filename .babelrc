@@ -1,8 +1,4 @@
 {
-  "optional": [
-    "es7.decorators",
-    "es7.classProperties",
-    "es7.objectRestSpread",
-    "es7.functionBind"
-  ]
+  "presets": ["es2015", "stage-0", "react"],
+  "plugins": ["transform-strict-mode", "transform-runtime", "transform-decorators-legacy"]
 }

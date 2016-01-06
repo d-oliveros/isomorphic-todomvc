@@ -1,2 +1,2 @@
 
-module.exports = require('requireindex')(__dirname);
+module.exports = require('es6-requireindex')();
