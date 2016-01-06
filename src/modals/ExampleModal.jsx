@@ -1,8 +1,6 @@
 import React from 'react';
-import a, { EXAMPLE_MODAL_OPEN } from '../constants/events';
+import { EXAMPLE_MODAL_OPEN } from '../constants/events';
 import { modal } from '../decorators';
-
-console.log(a, EXAMPLE_MODAL_OPEN);
 
 @modal(EXAMPLE_MODAL_OPEN)
 

@@ -3,9 +3,7 @@ import { branch } from 'baobab-react/decorators';
 import classes from 'classnames';
 import pluralize from 'pluralize';
 import { chain } from 'lodash';
-import acts, { Todo as TodoActions } from '../actions';
-
-console.log(acts);
+import { Todo as TodoActions } from '../actions';
 
 @branch({
   cursors: {
